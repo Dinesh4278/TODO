@@ -22,6 +22,7 @@ jobs:
     - name: Build and push Docker image
       run: |
         sh instalation.sh
+        chmod +x instalation.sh
         docker build -t devops_todo:latest .
         docker tag devops_todo:latest ${{ secrets.DOCKER_USERNAME }}/todo
         docker push ${{ secrets.DOCKER_USERNAME }}/todo
@@ -43,8 +44,3 @@ jobs:
         docker-compose down
         docker-compose up -d
         EOF
-
-    - name: Debug SSH
-      run: |
-        ls -la ~/.ssh
-        cat ~/.ssh/id_rsa
