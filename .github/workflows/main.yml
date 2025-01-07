@@ -21,6 +21,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
+        sh instalation.sh
         docker build -t devops_todo:latest .
         docker tag devops_todo:latest ${{ secrets.DOCKER_USERNAME }}/todo
         docker push ${{ secrets.DOCKER_USERNAME }}/todo
