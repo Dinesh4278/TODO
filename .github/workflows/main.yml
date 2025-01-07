@@ -23,7 +23,6 @@ jobs:
       run: |
         docker build -t devops_todo:latest .
         docker tag devops_todo:latest ${{ secrets.DOCKER_USERNAME }}/dinesh359/todo:latest
-        docker push <dockerhub-username>/<repository-name>:<tag>
         docker push ${{ secrets.DOCKER_USERNAME }}/ devops_todo:latest
 
     - name: Deploy to server
