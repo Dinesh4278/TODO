@@ -22,8 +22,8 @@ jobs:
     - name: Build and push Docker image
       run: |
         docker build -t devops_todo:latest .
-        docker tag devops_todo:latest ${{ secrets.DOCKER_USERNAME }}/dinesh359/todo:latest
-        docker push devops_todo:latest
+        docker tag devops_todo:latest ${{ secrets.DOCKER_USERNAME }}/todo
+        docker push ${{ secrets.DOCKER_USERNAME }}/todo
 
     - name: Deploy to server
       run: |
