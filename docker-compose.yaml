@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   app:
-    image: <your-dockerhub-username>/todo:latest
+    image: <your-dockerhub-username>/devops_todo:latest
     ports:
       - "3000:3000"
     environment:
