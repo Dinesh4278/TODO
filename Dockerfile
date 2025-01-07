@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . .
 
-#COPY .env .
+COPY .env .
 
 FROM node:16-alpine
 
